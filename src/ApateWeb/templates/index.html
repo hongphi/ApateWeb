@@ -1,33 +1,43 @@
 {% extends 'base.html' %}
 
-
 {% block nav %}
 
 {% endblock %}
 
 
 {% block content %}
-<table align="center">
+<table align="center" style="width: 75%">
 {% for item in items %}
-{{ forloop.counter }}
   <tr>
   	{% if item.0 %}
-    <td><img src="{{ STATIC_URL }}{{ item.0.image }}"/>{{ item.0.product_name }}</td>
+    <td>
+    	<img src="{{ STATIC_URL }}{{ item.0.image }}"/><br>
+    	<span>{{ item.0.product_name }}</span>
+    </td>
     {% else %}
     <td></td>
     {% endif %}
     {% if item.1 %}
-    <td><img src="{{ STATIC_URL }}{{ item.1.image }}"/>{{ item.1.product_name }}</td>
+    <td>
+    	<img src="{{ STATIC_URL }}{{ item.1.image }}"/><br>
+    	<span>{{ item.1.product_name }}</span>
+    </td>
     {% else %}
     <td></td>
     {% endif %}
     {% if item.2 %}
-    <td><img src="{{ STATIC_URL }}{{ item.2.image }}"/>{{ item.2.product_name }}</td>
+    <td>
+    	<img src="{{ STATIC_URL }}{{ item.2.image }}"/><br>
+    	<span>{{ item.2.product_name }}</span>
+    </td>
     {% else %}
     <td></td>
     {% endif %}
     {% if item.3 %}
-    <td><img src="{{ STATIC_URL }}{{ item.3.image }}"/>{{ item.3.product_name }}</td>
+    <td>
+    	<img src="{{ STATIC_URL }}{{ item.3.image }}"/><br>
+    	<span>{{ item.3.product_name }}</span>
+    </td>
     {% else %}
     <td></td>
     {% endif %}
