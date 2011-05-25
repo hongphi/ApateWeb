@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block nav %}
+
+{% endblock %}
+
+
+{% block content %}
+<table align="center">
+{% for item in items %}
+{{ forloop.counter }}
+  <tr>
+    <td><img src="{{ STATIC_URL }}{{ items.0.image }}"/>{{ item.0.product_name }}</td>
+    <td><img src="{{ STATIC_URL }}{{ items.1.image }}"/>{{ item.1.product_name }}</td>
+    <td><img src="{{ STATIC_URL }}{{ items.2.image }}"/>{{ item.2.product_name }}</td>
+    <td><img src="{{ STATIC_URL }}{{ items.3.image }}"/>{{ item.3.product_name }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
