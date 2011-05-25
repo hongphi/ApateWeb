@@ -5,6 +5,7 @@ from django.conf import settings
 # up
 print "Hello"
 
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
