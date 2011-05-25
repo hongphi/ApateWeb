@@ -9,37 +9,39 @@ from django.contrib import auth
 
 
 def home(request):
-    objs = Product.objects.all()
+    objs = generate(list(Product.objects.all()))
     return render_to_response('index.html',
                               {'items': objs},
                               context_instance = RequestContext(request))
 
+def generate(objs):
+    objs_len = len(objs)
+    lst = []
+    row = objs_len >> 2
+    for i in range(row):
+        temp = []
+        temp.append(objs[i << 2])
+        temp.append(objs[(i << 2) + 1])
+        temp.append(objs[(i << 2) + 2])
+        temp.append(objs[(i << 2) + 3])
+        lst.append(temp)
+
+    if objs_len % 4 != 0:
+        odd = objs_len % 4 - 1
+        count = 0
+        temp = []
+        while odd >= count:
+            temp.append(objs[(row << 2) + count])
+            count += 1
+
+        while len(temp) < 4:
+            temp.append(None)
+
+        lst.append(temp)
+
+    return lst
+
 def page(req, page):
     return HttpResponse('Page: ' + page)
-
-#def login(req):
-#    if req.method == "POST":
-#        username = req.POST.get('username', '')
-#        password = req.POST.get('password', '')
-#        user = auth.authenticate(username = username, password = password)
-#        if user:
-#            auth.login(req, user)
-#            
-#
-#def logout(req):
-#    logout(req)
-#    return HttpResponseRedirect('/')
-#def home(request):
-#    values = request.META.items()
-#    s = []
-#    for k, v in values:
-#        s.append('%s: %s<br>' % (k, v))
-#    return HttpResponse("Hello, World!!<br>" + ''.join(s) +
-#
-#                        request.META['HTTP_USER_AGENT'] + "<br>" +
-#                        request.META['REMOTE_ADDR'] + "<br>")
-#    return render_to_response('index.html',
-#                              {'text': "Hello, World!!"},
-#                              context_instance = RequestContext(request))
 
 
