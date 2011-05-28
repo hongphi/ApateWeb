@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="product">
+	<div class="image">
+		<img width="126" height="126" alt="{{ product.product_name }}" src="{{ STATIC_URL }}{{ product.image }}">
+	</div>
+	<div class="details">
+		<h3>{{ product.product_name }}</h3>
+		<span>Point: {{ product.point }}</span><br>
+		<span>Vote: {{ product.vote }}</span><br>
+	</div>
+	<div class="content">
+		{{ product.details }}
+	</div>
+	<div class="comments">
+		<form action="">
+			<h4>Comment:</h4>
+			<textarea rows="10" cols="55"></textarea><br>
+			<input type="submit" value="submit">			
+		</form>		
+	</div>
+</div>
+
+{% endblock %}

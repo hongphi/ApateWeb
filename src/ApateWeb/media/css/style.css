@@ -1,4 +1,25 @@
 body {
 	font-family: "Times New Roman";
+}
+
+.product {
+	padding-left: 50px;
+	width: 500px;
+	background-color: #e1ece2;
+}
+
+.image {
+	padding-left: 5px;
+	width: 200px;
+}
+
+.details {
+	width: 150px;
 	background-color: green;
-};
+}
+
+.content {
+	padding-top: 20px;
+	width: 450px;
+}
+
