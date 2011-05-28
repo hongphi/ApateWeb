@@ -93,7 +93,7 @@ SECRET_KEY = 'ur34%8p501+&g=5^j60+mfr!$6i(r5on^6kpp_3kg72(iatw-7'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -121,7 +121,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'django.contrib.admindocs',
     'products',
     'registration',
 )
