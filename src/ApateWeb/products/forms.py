@@ -8,4 +8,5 @@ from django import forms
 
 
 class CommentForm(forms.Form):
-    content = forms.Textarea({'rows' : 10, 'cols' : 30})
+    content = forms.CharField(widget = forms.Textarea({'rows' : 5, 'cols' : 55}))
+    

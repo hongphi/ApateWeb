@@ -14,13 +14,14 @@ class Product(models.Model):
 class Vote(models.Model):
     vote_point = models.IntegerField()
     vote_user = models.ForeignKey(User)
-    vote_product = models.OneToOneField(Product)
+    vote_product = models.ForeignKey(Product)
     
 class Comment(models.Model):
+    comment_id = models.AutoField(primary_key = True)
     comment_content = models.TextField()
-    comment_date = models.DateTimeField()
-    comment_product = models.ManyToManyField(Product)
-    comment_user = models.ManyToManyField(User)
+    comment_date = models.DateTimeField(auto_now = True)
+    comment_product = models.ForeignKey(Product)
+    comment_user = models.ForeignKey(User)
     
 
 

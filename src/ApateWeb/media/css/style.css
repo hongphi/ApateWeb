@@ -9,6 +9,7 @@ body {
 }
 
 .image {
+	padding-top: 10px;
 	padding-left: 5px;
 	width: 200px;
 }
@@ -19,6 +20,12 @@ body {
 }
 
 .content {
+	padding-top: 20px;
+	width: 450px;
+}
+
+
+.show {
 	padding-top: 20px;
 	width: 450px;
 }

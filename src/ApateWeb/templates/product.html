@@ -19,11 +19,22 @@
 		{{ product.details }}
 	</div>
 	<div class="comments">
-		<form action="">
+		<form action="/product/id={{ product.product_id }}/" method="post"> {% csrf_token %}
 			<h4>Comment:</h4>
-			<textarea rows="10" cols="55"></textarea><br>
+			{% if error %}
+				<span style="color: red;">{{ error }}</span>
+			{% endif %}
+			{{ form.content }}
+			<input type="hidden" value="{{ product.product_id }}" name="product_id">
 			<input type="submit" value="submit">			
 		</form>		
+	</div>
+	<div class="show">
+		{% for comment in comments %}
+			<span style="color: green; font-weight: bold;">{{ comment.comment_user.username }}</span> <span style="float: right;">{{ comment.comment_date }}</span><br>
+			<span>{{ comment.comment_content }}</span>
+			<hr>
+		{% endfor %}
 	</div>
 </div>
 
