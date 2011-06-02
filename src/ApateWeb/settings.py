@@ -1,6 +1,7 @@
 # Django settings for ApateWeb project.
 import os
 
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -148,6 +149,7 @@ LOGGING = {
     }
 }
 
+PRODUCT_OF_PAGE = 4
 
 ACCOUNT_ACTIVATION_DAYS = 2
 EMAIL_HOST = 'localhost'

@@ -43,6 +43,17 @@
     {% endif %}
   </tr>
 {% endfor %}
+  <tr>
+  	<td colspan="4" align="center">
+  	{% for page in pages %}
+  		{% if page.0 == current %}
+  			<b>{{ page.1 }}</b>
+  		{% else %}
+  			<a href="/products/{{ page.1 }}/">{{ page.0 }}</a>
+  		{% endif %}
+  	{% endfor %}
+  	</td>
+  </tr>
 </table>
 
 {% endblock %}

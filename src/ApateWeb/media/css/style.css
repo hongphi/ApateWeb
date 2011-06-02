@@ -16,17 +16,25 @@ body {
 
 .details {
 	width: 150px;
-	background-color: green;
 }
 
 .content {
 	padding-top: 20px;
 	width: 450px;
 }
-
+.comment {
+	font:  11px "lucida grande",tahoma,verdana,arial,sans-serif;
+}
 
 .show {
 	padding-top: 20px;
 	width: 450px;
 }
+.date {
+	font-family: sans-serif;
+	font-size: 10pt;
+	font-style: oblique;
+	float: right;
+}
+.
 

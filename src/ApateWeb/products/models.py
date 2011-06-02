@@ -11,6 +11,9 @@ class Product(models.Model):
     price = models.IntegerField()
     tags = models.CharField(max_length = 200)
     
+    def __str__(self):
+        return self.product_name
+    
 class Vote(models.Model):
     vote_point = models.IntegerField()
     vote_user = models.ForeignKey(User)
