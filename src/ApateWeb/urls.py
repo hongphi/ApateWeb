@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'products.views.index'),
     url(r'^products/(?P<page>\d+)/$', 'products.views.home'),
+    url(r'^search/', include('haystack.urls')),
     url(r'^accounts/', include('registration.urls')),
     url(r'^product/id=(?P<product_id>\d+)/$', 'products.views.view_product'),
     url(r'^page(?P<page>\d+)/$', 'products.views.page', name = 'home'),

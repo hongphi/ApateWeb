@@ -33,7 +33,7 @@
 		{% for comment in comments %}
 			<span style="color: green; font-weight: bold;">{{ comment.comment_user.username }}</span>
 			<span class="date">{{ comment.comment_date }}</span><br>
-			<span class="comment">{{ comment.comment_content }}</span>
+			<span class="comment">{{ comment.comment_content|linebreaksbr }}</span>
 			<hr>
 		{% endfor %}
 	</div>

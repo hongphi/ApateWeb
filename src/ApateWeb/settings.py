@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'products',
     'registration',
+    'haystack',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -149,7 +150,44 @@ LOGGING = {
     }
 }
 
-PRODUCT_OF_PAGE = 4
+#HAYSTACK_CONNECTIONS = {
+#    'default': {
+#        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+#        'URL': 'http://localhost:8000/solr/default',
+#        'TIMEOUT': 60 * 5,
+#        'INCLUDE_SPELLING': True,
+#        'BATCH_SIZE': 100,
+#    },
+#    'autocomplete': {
+#        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+#        'PATH': '/home/search/whoosh_index',
+#        'STORAGE': 'file',
+#        'POST_LIMIT': 128 * 1024 * 1024,
+#        'INCLUDE_SPELLING': True,
+#        'BATCH_SIZE': 100,
+#    },
+#    'slave': {
+#        'ENGINE': 'xapian_backend.XapianEngine',
+#        'PATH': '/home/search/xapian_index',
+#        'INCLUDE_SPELLING': True,
+#        'BATCH_SIZE': 100,
+#    },
+#    'db': {
+#        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+#    }
+#}
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': '/home/hongphi/search/whoosh_index',
+    },
+}
+
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 50
+
+
+PRODUCT_OF_PAGE = 8
 
 ACCOUNT_ACTIVATION_DAYS = 2
 EMAIL_HOST = 'localhost'
