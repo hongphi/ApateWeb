@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block nav %}
-
 {% endblock %}
 
 {% block content %}
@@ -11,30 +10,27 @@
 		<img width="126" height="126" alt="{{ product.product_name }}" src="{{ STATIC_URL }}{{ product.image }}">
 		<h3>{{ product.product_name }}</h3>
 		<span><b>Point</b>: {{ product.point }}</span><br>
-		<span><b>Vote</b>: </span><br>
+		<span><b>Vote</b>:</span><br> 
 		<span><b>Price</b>: {{ product.price }}$</span>
 	</div>
 
-	<div class="content">
-		{{ product.details }}
-	</div>
+	<div class="content">{{ product.details }}</div>
 	<div>
 		<form action="/product/id={{ product.product_id }}/" method="post"> {% csrf_token %}
 			<h4>Comment:</h4>
 			{% if error %}
-				<span style="color: red;">{{ error }}</span>
+				<span style="color: red;">{{ error }}</span> 
 			{% endif %}
-			{{ form.content }}
-			{{ form.capcha }}
-			<input type="submit" value="submit">			
-		</form>		
+			{{ form.content }} {{ form.capcha }} 
+			<input type="submit" value="submit">
+		</form>
 	</div>
 	<div class="show">
-		{% for comment in comments %}
+		{% for comment in comments %} 
 			<span style="color: green; font-weight: bold;">{{ comment.comment_user.username }}</span>
 			<span class="date">{{ comment.comment_date }}</span><br>
 			<span class="comment">{{ comment.comment_content|linebreaksbr }}</span>
-			<hr>
+		<hr>
 		{% endfor %}
 	</div>
 </div>

@@ -14,7 +14,7 @@ class AdminProduct(admin.ModelAdmin):
 
 class AdminComments(admin.ModelAdmin):
     list_display = ['comment_id', 'comment_user', 'comment_product', 'comment_date', 'comment_content']
-    list_filter = ('comment_product', 'comment_user', 'comment_date')
-    
+    list_filter = ('comment_user', 'comment_date')
+
 admin.site.register(Product, AdminProduct)
 admin.site.register(Comment, AdminComments)

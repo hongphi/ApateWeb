@@ -6,6 +6,11 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.python.pydev.PyDevBuilder</name>
 			<arguments>
 			</arguments>
@@ -14,5 +19,12 @@
 	<natures>
 		<nature>org.python.pydev.pythonNature</nature>
 		<nature>org.python.pydev.django.djangoNature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>APP_ROOT</name>
+			<value>file:/home/hongphi/Project/Django/ApateWeb/src/ApateWeb</value>
+		</variable>
+	</variableList>
 </projectDescription>

@@ -1,60 +1,59 @@
-{% extends 'base.html' %}
-
-{% block nav %}
-
-{% endblock %}
+{% extends 'base.html' %} 
+{% load tagslib %}
 
 
 {% block content %}
 
-<table align="center" style="width: 75%">
-{% for item in items %}
-  <tr>
-  	{% if item.0 %}
-    <td>
-    	<img width="126" height="126" src="{{ STATIC_URL }}{{ item.0.image }}"/><br>
-    	<span><a href="/product/id={{ item.0.product_id }}">{{ item.0.product_name }}</a></span>
-    </td>
-    {% else %}
-    <td></td>
-    {% endif %}
-    {% if item.1 %}
-    <td>
-    	<img width="126" height="126" src="{{ STATIC_URL }}{{ item.1.image }}"/><br>
-    	<span><a href="/product/id={{ item.1.product_id }}">{{ item.1.product_name }}</a></span>
-    </td>
-    {% else %}
-    <td></td>
-    {% endif %}
-    {% if item.2 %}
-    <td>
-    	<img width="126" height="126" src="{{ STATIC_URL }}{{ item.2.image }}"/><br>
-    	<span><a href="/product/id={{ item.2.product_id }}">{{ item.2.product_name }}</a></span>
-    </td>
-    {% else %}
-    <td></td>
-    {% endif %}
-    {% if item.3 %}
-    <td>
-    	<img width="126" height="126" src="{{ STATIC_URL }}{{ item.3.image }}"/><br>
-    	<span><a href="/product/id={{ item.3.product_id }}">{{ item.3.product_name }}</a></span>
-    </td>
-    {% else %}
-    <td></td>
-    {% endif %}
-  </tr>
-{% endfor %}
-  <tr>
-  	<td colspan="4" align="center">
-  	{% for page in pages %}
-  		{% if page.0 == current %}
-  			<b>{{ page.1 }}</b>
-  		{% else %}
-  			<a href="/products/{{ page.1 }}/">{{ page.0 }}</a>
-  		{% endif %}
-  	{% endfor %}
-  	</td>
-  </tr>
+<table align="center" style="width: 75%" class='view'>
+	{% for item in items %}
+	<tr>
+		{% if item.0 %}
+		<td>
+			<a href="/product/id={{ item.0.product_id }}"><img width="126" height="126" src="{{ STATIC_URL }}{{ item.0.image }}" /></a><br>
+			<span><a href="/product/id={{ item.0.product_id }}">{{ item.0.product_name }}</a></span>
+		</td>
+		{% else %}
+		<td></td>
+		{% endif %}
+		{% if item.1 %}
+		<td>
+			<a href="/product/id={{ item.1.product_id }}"><img width="126" height="126" src="{{ STATIC_URL }}{{ item.1.image }}" /></a><br>
+			<span><a href="/product/id={{ item.1.product_id }}">{{ item.1.product_name }}</a></span>
+		</td>
+		{% else %}
+		<td></td> 
+		{% endif %} 
+		{% if item.2 %}
+		<td>
+			<a href="/product/id={{ item.2.product_id }}"><img width="126" height="126" src="{{ STATIC_URL }}{{ item.2.image }}" /></a><br>
+			<span><a href="/product/id={{ item.2.product_id }}">{{ item.2.product_name }}</a></span>
+		</td> 
+		{% else %}
+		<td></td> 
+		{% endif %} 
+		{% if item.3 %}
+		<td>
+			<a href="/product/id={{ item.3.product_id }}"><img width="126" height="126" src="{{ STATIC_URL }}{{ item.3.image }}" /></a><br>
+			<span><a href="/product/id={{ item.3.product_id }}">{{ item.3.product_name }}</a></span> 
+			{{ item.3.product_name|test:" 123" }}
+		</td> 
+		{% else %}
+		<td></td> 
+		{% endif %}
+	</tr>
+	{% endfor %}
+	<tr>
+		<td colspan="4" align="center">
+		{% for page in pages %}
+		 	{% if page.0 == current %}
+		  		<b>{{ page.1 }} &nbsp</b>
+		 	{% else %} 
+		 		<a href="/products/{{ page.1 }}/">{{ page.0 }} &nbsp</a> 
+		 	{% endif %} 
+		{% endfor %}
+		</td>
+	</tr>
 </table>
 
-{% endblock %}
+{% endblock %}   
+

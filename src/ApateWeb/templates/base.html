@@ -2,26 +2,34 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/json2.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/script.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/clock_skew.js"></script>
 <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-	<div id="header">
-	    {% block header %}
-		<a href="/">Home</a> | 
+
+	{% block nav %} 
 	
-		{% if user.is_authenticated %}
-			Logged in: {{ user.username }} 
-			(<a href="/accounts/logout/">Log out</a> | 
-		 	<a href="/accounts/password/change/">Change password</a>)
-		{% else %}
-			<a href="/accounts/login/">Log in</a>
-		{% endif %}
+	{% endblock %}
+	
+	<div id="header">
+		{% block header %}
+			<a href="/">Home</a> | 
+			{% if user.is_authenticated %} Logged in: {{ user.username }} (<a href="/accounts/logout/">Log out</a> | 
+			<a href="/accounts/password/change/">Change password</a>) 
+			{%	else %} 
+			<a href="/accounts/login/">Log in</a> 
+			{% endif %}
 		<hr />
-	    {% endblock %}
-    </div>
-	{% block nav %}	{% endblock %}
+		{% endblock %}
+	</div>
+	
+	<ul id="results"></ul>
+	<button id="button">Measure Clock Skew</button>
+	
 	{% block content %} {% endblock %}
 </body>
 </html>

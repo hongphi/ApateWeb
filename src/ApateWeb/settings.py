@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'products',
     'registration',
     'haystack',
+    'products.templatetags',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -187,7 +188,7 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 50
 
 
-PRODUCT_OF_PAGE = 8
+PRODUCT_OF_PAGE = 4
 
 ACCOUNT_ACTIVATION_DAYS = 2
 EMAIL_HOST = 'localhost'

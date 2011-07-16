@@ -8,6 +8,8 @@ from ApateWeb.products.forms import CommentForm
 from ApateWeb.products.models import Comment
 from django.views.decorators.csrf import csrf_protect
 from django.conf import settings
+import json
+import time
 
 def index(request):
     return HttpResponseRedirect("/products/1/")
@@ -19,7 +21,7 @@ def home(request, page):
     pages = total / n
     if total % n != 0:
         pages += 1
-        
+
     if page > pages:
         raise Http404()
     offset_from = (page - 1) * n
@@ -55,13 +57,17 @@ def view_product(request, product_id):
         else:
             error = "Please input your comment"
     else:
-        form = CommentForm()    
-    
+        form = CommentForm()
+
     return render_to_response('product.html',
                                   {'product': product, 'form': form, 'error' : error, 'comments' : comments},
                                   context_instance = RequestContext(request))
-         
+
 def page(req, page):
     return HttpResponse('Page: ' + page)
+
+def timestamp(request):
+    return HttpResponse(json.dumps({u'time': 1000 * time.time()}),
+                        mimetype = u'application/json')
 
 

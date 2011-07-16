@@ -2,16 +2,45 @@ body {
 	font-family: "Times New Roman";
 }
 
+a {
+	text-decoration: none;
+}
+
 .product {
 	padding-left: 50px;
 	width: 500px;
 	background-color: #e1ece2;
+	border-radius: 10px;
+	text-shadow: 1px 1px 2px #999;
+	-moz-box-shadow: 5px 5px 10px #999;
+	-webkit-box-shadow: 5px 5px 10px #999;
+}
+
+li {
+	list-style: none;
+}
+
+.view {
+	-moz-box-shadow: 5px 5px 10px #999;
+	-webkit-box-shadow: 5px 5px 10px #999;
+	border-radius: 10px;
+	text-shadow: 1px 1px 2px #999;
 }
 
 .image {
 	padding-top: 10px;
 	padding-left: 5px;
 	width: 200px;
+}
+
+a:hover img {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .details {
@@ -22,19 +51,81 @@ body {
 	padding-top: 20px;
 	width: 450px;
 }
+
 .comment {
-	font:  11px "lucida grande",tahoma,verdana,arial,sans-serif;
+	font: 11px "lucida grande", tahoma, verdana, arial, sans-serif;
 }
 
 .show {
 	padding-top: 20px;
 	width: 450px;
 }
+
 .date {
 	font-family: sans-serif;
 	font-size: 10pt;
 	font-style: oblique;
 	float: right;
 }
-.
 
+.msg {
+	background-image: -moz-repeating-linear-gradient(135deg, transparent, transparent 20px,
+		rgba(255, 255, 255, .05) 20px, rgba(255, 255, 255, .05) 40px );
+	background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 20px,
+		rgba(255, 255, 255, .05) 20px, rgba(255, 255, 255, .05) 40px );
+	background-image: -ms-repeating-linear-gradient(135deg, transparent, transparent 20px,
+		rgba(255, 255, 255, .05) 20px, rgba(255, 255, 255, .05) 40px );
+	background-image: -o-repeating-linear-gradient(135deg, transparent, transparent 20px,
+		rgba(255, 255, 255, .05) 20px, rgba(255, 255, 255, .05) 40px );
+	background-image: repeating-linear-gradient(135deg, transparent, transparent 20px, rgba(255
+		, 255, 255, .05) 20px, rgba(255, 255, 255, .05) 40px );
+	-moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .4);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .4);
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .4);
+	width: 100%;
+	border: 1px solid;
+	color: #fff;
+	padding: 15px;
+	position: fixed;
+	_position: absolute;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+	-webkit-animation: animate-bg 5s linear infinite;
+}
+
+.info {
+	background-color: #4ea5cd;
+	border-color: #3b8eb5;
+}
+
+.error {
+	background-color: #de4343;
+	border-color: #c43d3d;
+}
+
+.warning {
+	background-color: #eaaf51;
+	border-color: #d99a36;
+}
+
+.success {
+	background-color: #61b832;
+	border-color: #55a12c;
+}
+
+.message h3 {
+	margin: 0 0 5px 0;
+}
+
+.message p {
+	margin: 0;
+}
+
+@-webkit-keyframes animate-bg
+{
+    from {
+        background-position: 0 0;
+    }
+    to {
+       background-position: -100px 0;
+    }
+}
